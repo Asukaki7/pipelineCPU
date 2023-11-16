@@ -256,12 +256,6 @@ always @(*) begin
                 endcase               
             end
 
-            
-
-            
-            
-
-
 
             7'b0100011:begin    //S型指令
                 mrs1andpc_ctr<=0;
