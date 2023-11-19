@@ -3,8 +3,8 @@ module ID(
     input [31:0] Instr,
 
     output reg [4:0] Rd,
-    output reg [4:0] Rs1,
-    output reg [4:0] Rs2,
+    output reg [4:0] Ra,
+    output reg [4:0] Rb,
 
     //control signal
     //-ID段-
@@ -33,8 +33,8 @@ wire [6:0] fun7=Instr[31:25];
 initial begin
     Jump <= opcode[6] & opcode[5] & ~opcode[4] & opcode[3] & opcode[2] & opcode[1] & opcode[0];
     Rd <= Instr[11:7];
-    Rs1 <= Instr[19:15];
-    Rs2 <= Instr[24:20];
+    Ra <= Instr[19:15];
+    Rb <= Instr[24:20];
     RegWr = 0;
     MemWr = 0;
     Branch  = 2'b00;//不译码
@@ -49,8 +49,8 @@ end
 always @(*) begin
     if(~Resetn) begin//低有效 
         Rd<=0;
-        Rs1<=0;
-        Rs2<=0;
+        Ra<=0;
+        Rb<=0;
     end 
     else begin
         case(opcode)

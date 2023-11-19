@@ -1,0 +1,588 @@
+Analysis & Synthesis report for RiscVCPU_top
+Sun Nov 19 20:35:38 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |RiscVCPU_top
+ 10. Parameter Settings for User Entity Instance: EX_ALU:u_EX_ALU
+ 11. Port Connectivity Checks: "M_WB_register:u_M_WB_register"
+ 12. Port Connectivity Checks: "MemData:u_MemData"
+ 13. Port Connectivity Checks: "EX_M_register:u_EX_M_register"
+ 14. Port Connectivity Checks: "EX_ALU:u_EX_ALU"
+ 15. Port Connectivity Checks: "ID_EX_register:u_ID_EX_register"
+ 16. Port Connectivity Checks: "RegisterFile:u_RegisterFile"
+ 17. Port Connectivity Checks: "ID:u_ID"
+ 18. Port Connectivity Checks: "pcadder_IF:u_pcadder_IF"
+ 19. Port Connectivity Checks: "Mul_PC:u_Mul_PC"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 19 20:35:38 2023           ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Standard Edition ;
+; Revision Name                      ; RiscVCPU_top                                    ;
+; Top-level Entity Name              ; RiscVCPU_top                                    ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 2                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29I7      ;                    ;
+; Top-level entity name                                                      ; RiscVCPU_top       ; RiscVCPU_top       ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; riscvcpu_top.v                   ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v   ;         ;
+; mul_pc.v                         ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v         ;         ;
+; pc.v                             ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/pc.v             ;         ;
+; pcadder_if.v                     ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v     ;         ;
+; instmem.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/instmem.v        ;         ;
+; if_id_register.v                 ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v ;         ;
+; ie.v                             ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/ie.v             ;         ;
+; id.v                             ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/id.v             ;         ;
+; registerfile.v                   ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v   ;         ;
+; id_ex_register.v                 ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v ;         ;
+; ex_alu.v                         ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v         ;         ;
+; ex_m_register.v                  ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v  ;         ;
+; memdata.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/memdata.v        ;         ;
+; m_wb_register.v                  ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v  ;         ;
+; mul_memtoreg.v                   ; yes             ; Auto-Found Verilog HDL File  ; E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v   ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; |RiscVCPU_top              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |RiscVCPU_top       ; RiscVCPU_top ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RiscVCPU_top ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; ADD            ; 0000  ; Unsigned Binary                                     ;
+; SUB            ; 1000  ; Unsigned Binary                                     ;
+; SLT            ; 0010  ; Unsigned Binary                                     ;
+; SLTU           ; 0011  ; Unsigned Binary                                     ;
+; OR             ; 0110  ; Unsigned Binary                                     ;
+; srcB           ; 1111  ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_ALU:u_EX_ALU ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; ADD            ; 0000  ; Unsigned Binary                     ;
+; SUB            ; 1000  ; Unsigned Binary                     ;
+; SLT            ; 0010  ; Unsigned Binary                     ;
+; SLTU           ; 0011  ; Unsigned Binary                     ;
+; OR             ; 0110  ; Unsigned Binary                     ;
+; srcB           ; 1111  ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "M_WB_register:u_M_WB_register"                                                                                                                                                         ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Do_i     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Rd_i     ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
+; ALUout_i ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Rd       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "Rd[31..5]" have no fanouts                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MemData:u_MemData"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Do[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EX_M_register:u_EX_M_register"                                                                                                                                                         ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; busB_i   ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Rd_data  ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
+; ALUout_i ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Target_i ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Rd       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "Rd[31..5]" have no fanouts                                                            ;
+; Rd[4..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EX_ALU:u_EX_ALU"                                                                                                                                                                            ;
++---------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PC            ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALUout[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; Target[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_EX_register:u_ID_EX_register"                                                                                                                                                         ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                          ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rs1_Data     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "rs1_Data[31..1]" will be connected to GND.                               ;
+; rs2_Data     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "rs2_Data[31..1]" will be connected to GND.                               ;
+; Rd_Data      ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (6 bits) it drives.  Extra input bit(s) "Rd_Data[5..5]" will be connected to GND.                                  ;
+; ALUBSrc_i    ; Input  ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; PC_EX[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Rd_EX        ; Output ; Warning  ; Output or bidir port (6 bits) is wider than the port expression (5 bits) it drives; bit(s) "Rd_EX[5..5]" have no fanouts                                                         ;
+; Rd_EX[4..1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Branch_EX    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RegisterFile:u_RegisterFile"                                                                                              ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                   ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; busA ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "busA[31..1]" have no fanouts ;
+; busB ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "busB[31..1]" have no fanouts ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID:u_ID"                                                                                  ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; ALUBSrc[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pcadder_IF:u_pcadder_IF"                                                                                                      ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                     ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; nextPc ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "nextPc[31..1]" have no fanouts ;
+; nextPc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mul_PC:u_Mul_PC"                                                                                                                                                                    ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Target ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; nextpc ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+    Info: Processing started: Sun Nov 19 20:35:28 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RiscVCPU_top -c RiscVCPU_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Warning (12125): Using design file riscvcpu_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RiscVCPU_top File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at riscvcpu_top.v(114): created implicit net for "nextPc" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 114
+Warning (10236): Verilog HDL Implicit Net warning at riscvcpu_top.v(191): created implicit net for "busA" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 191
+Warning (10236): Verilog HDL Implicit Net warning at riscvcpu_top.v(193): created implicit net for "busB" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 193
+Warning (10236): Verilog HDL Implicit Net warning at riscvcpu_top.v(296): created implicit net for "Branch_i" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 296
+Info (12127): Elaborating entity "RiscVCPU_top" for the top level hierarchy
+Warning (12125): Using design file mul_pc.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Mul_PC File: E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v Line: 1
+Info (12128): Elaborating entity "Mul_PC" for hierarchy "Mul_PC:u_Mul_PC" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 103
+Warning (12125): Using design file pc.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PC File: E:/coding/Fpga_project_digital/pipelineCPU/pc.v Line: 1
+Info (12128): Elaborating entity "PC" for hierarchy "PC:u_PC" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 110
+Warning (12125): Using design file pcadder_if.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pcadder_IF File: E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v Line: 1
+Info (12128): Elaborating entity "pcadder_IF" for hierarchy "pcadder_IF:u_pcadder_IF" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 115
+Warning (12125): Using design file instmem.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: InstMem File: E:/coding/Fpga_project_digital/pipelineCPU/instmem.v Line: 1
+Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:u_InstMem" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 120
+Warning (10030): Net "instMem_text.data_a" at instmem.v(8) has no driver or initial value, using a default initial value '0' File: E:/coding/Fpga_project_digital/pipelineCPU/instmem.v Line: 8
+Warning (10030): Net "instMem_text.waddr_a" at instmem.v(8) has no driver or initial value, using a default initial value '0' File: E:/coding/Fpga_project_digital/pipelineCPU/instmem.v Line: 8
+Warning (10030): Net "instMem_text.we_a" at instmem.v(8) has no driver or initial value, using a default initial value '0' File: E:/coding/Fpga_project_digital/pipelineCPU/instmem.v Line: 8
+Warning (12125): Using design file if_id_register.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: IF_ID_register File: E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v Line: 1
+Info (12128): Elaborating entity "IF_ID_register" for hierarchy "IF_ID_register:u_IF_ID_register" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 142
+Warning (12125): Using design file ie.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: IE File: E:/coding/Fpga_project_digital/pipelineCPU/ie.v Line: 2
+Info (12128): Elaborating entity "IE" for hierarchy "IE:u_IE" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 157
+Warning (12125): Using design file id.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ID File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 1
+Info (12128): Elaborating entity "ID" for hierarchy "ID:u_ID" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 182
+Warning (10036): Verilog HDL or VHDL warning at id.v(30): object "fun7" assigned a value but never read File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 30
+Warning (10230): Verilog HDL assignment warning at id.v(40): truncated value with size 2 to match size of target (1) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 40
+Warning (10230): Verilog HDL assignment warning at id.v(43): truncated value with size 6 to match size of target (4) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 43
+Warning (10855): Verilog HDL warning at id.v(33): initial value for variable Jump should be constant File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 33
+Warning (10855): Verilog HDL warning at id.v(33): initial value for variable Rd should be constant File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 33
+Warning (10855): Verilog HDL warning at id.v(33): initial value for variable Ra should be constant File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 33
+Warning (10855): Verilog HDL warning at id.v(33): initial value for variable Rb should be constant File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 33
+Warning (10230): Verilog HDL assignment warning at id.v(104): truncated value with size 4 to match size of target (1) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 104
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Rd", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Ra", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Rb", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Extop", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "ALUctr", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "RegWr", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "ALUASrc", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "ALUBSrc", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Jump", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "Branch", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "MemtoReg", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at id.v(50): inferring latch(es) for variable "MemWr", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "MemWr" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "MemtoReg" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Branch" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Jump" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUBSrc[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUBSrc[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUASrc" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUctr[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUctr[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUctr[2]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "ALUctr[3]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Extop[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Extop[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Extop[2]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rb[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rb[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rb[2]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rb[3]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rb[4]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Ra[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Ra[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Ra[2]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Ra[3]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Ra[4]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rd[0]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rd[1]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rd[2]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rd[3]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "Rd[4]" at id.v(50) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Info (10041): Inferred latch for "RegWr" at id.v(56) File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 56
+Warning (12125): Using design file registerfile.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: RegisterFile File: E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v Line: 1
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:u_RegisterFile" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 194
+Warning (12125): Using design file id_ex_register.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v Line: 1
+Info (12128): Elaborating entity "ID_EX_register" for hierarchy "ID_EX_register:u_ID_EX_register" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 237
+Warning (10034): Output port "imm_EX" at id_ex_register.v(27) has no driver File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v Line: 27
+Warning (12125): Using design file ex_alu.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: EX_ALU File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 1
+Info (12128): Elaborating entity "EX_ALU" for hierarchy "EX_ALU:u_EX_ALU" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 276
+Warning (10240): Verilog HDL Always Construct warning at ex_alu.v(47): inferring latch(es) for variable "Mul_ALUBin", which holds its previous value in one or more paths through the always construct File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(70): variable "ALUAin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 70
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(70): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 70
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(74): variable "ALUAin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 74
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(74): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 74
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(79): variable "ALUAin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 79
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(79): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 79
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(85): variable "ALUAin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 85
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(85): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 85
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(91): variable "ALUAin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 91
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(91): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 91
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(95): variable "ALUBin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 95
+Warning (10270): Verilog HDL Case Statement warning at ex_alu.v(68): incomplete case statement has no default case item File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at ex_alu.v(98): variable "ALUout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 98
+Info (10041): Inferred latch for "Mul_ALUBin[0]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[1]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[2]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[3]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[4]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[5]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[6]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[7]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[8]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[9]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[10]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[11]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[12]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[13]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[14]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[15]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[16]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[17]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[18]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[19]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[20]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[21]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[22]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[23]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[24]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[25]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[26]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[27]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[28]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[29]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[30]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Info (10041): Inferred latch for "Mul_ALUBin[31]" at ex_alu.v(47) File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v Line: 47
+Warning (12125): Using design file ex_m_register.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v Line: 1
+Info (12128): Elaborating entity "EX_M_register" for hierarchy "EX_M_register:u_EX_M_register" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 311
+Warning (12125): Using design file memdata.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: MemData File: E:/coding/Fpga_project_digital/pipelineCPU/memdata.v Line: 1
+Info (12128): Elaborating entity "MemData" for hierarchy "MemData:u_MemData" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 327
+Warning (12125): Using design file m_wb_register.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: M_WB_register File: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v Line: 1
+Info (12128): Elaborating entity "M_WB_register" for hierarchy "M_WB_register:u_M_WB_register" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 351
+Warning (12125): Using design file mul_memtoreg.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Mul_MemtoReg File: E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v Line: 1
+Info (12128): Elaborating entity "Mul_MemtoReg" for hierarchy "Mul_MemtoReg:u_Mul_MemtoReg" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 364
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file E:/coding/Fpga_project_digital/pipelineCPU/output_files/RiscVCPU_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 2
+    Warning (15610): No output dependent on input pin "Resetn" File: E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v Line: 4
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 62 warnings
+    Info: Peak virtual memory: 4743 megabytes
+    Info: Processing ended: Sun Nov 19 20:35:38 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/coding/Fpga_project_digital/pipelineCPU/output_files/RiscVCPU_top.map.smsg.
+
+

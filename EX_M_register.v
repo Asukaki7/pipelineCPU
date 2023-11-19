@@ -24,6 +24,7 @@ module EX_M_register (
     output reg Jump,
     output reg MemtoReg,
     output reg Regwr,
+    output reg Zero,
 
     output reg [31:0] busB,
     output reg [31:0] Target,
@@ -40,7 +41,7 @@ always @(negedge CLK ) begin
         Jump <= 1'b0;
         MemtoReg <= 1'b0;
         Regwr <= 1'b0;
-
+        Zero <= 1'b0;
         busB <= 32'b0;
         ALUout <= 32'b0;
         Rd <= 32'b0;
@@ -53,7 +54,7 @@ always @(negedge CLK ) begin
         Jump <= Jump_i;
         MemtoReg <= MemtoReg_i;
         Regwr <= Regwr_i;
-
+        Zero <= zero_i;
         busB <= busB_i;
         ALUout <= ALUout_i;
         Rd <= Rd_data;

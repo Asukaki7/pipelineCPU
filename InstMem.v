@@ -1,8 +1,8 @@
 module InstMem(
-    input [31:0] Addr,
-    input clear,
+    input [31:0] PC,
+    input Resetn,
     
-    output reg [31:0] instruct
+    output reg [31:0] Instr
 );
 
 reg [31:0] instMem_text[0:255];
@@ -40,12 +40,12 @@ end
    
        
 
- //initial $readmemh("C:/Users/Desktop/RISCV_CPU/instruct.txt",instMem_text);
+ //initial $readmemh("C:/Users/Desktop/RISCV_CPU/Instr.txt",instMem_text);
 
 always @(*) begin
-        if(clear)
-            instruct<=0;
+        if(!Resetn)
+            Instr<=0;
         else
-          instruct<=instMem_text[Addr[9:2]];
+          Instr<=instMem_text[PC[9:2]];
     end
 endmodule

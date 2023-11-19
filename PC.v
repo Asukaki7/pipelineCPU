@@ -1,20 +1,20 @@
 module PC(
-    input CLK,
-    input   [31:0] nowpc,
-    input clear,
-    output reg [31:0]   nextpc
+    input          CLK,
+    input  [31:0] PC_i,
+    input Resetn,
+    output reg [31:0]   PC
     
 );
 
 initial begin    
-        nextpc <= 0;   
+        PC <= 0;   
     end 
 
 always @(negedge CLK) begin
-    if(clear)
-        nextpc <= 32'b0;
+    if(!Resetn)
+        PC <= 32'b0;
     else
-        nextpc <= nowpc;
+        PC <= PC_i;
 end
 
 

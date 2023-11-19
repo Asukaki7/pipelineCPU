@@ -9,16 +9,30 @@ module EX_ALU(
     input wire [31:0] imm,
 
     output reg [31:0] ALUout,
+    output wire [31:0] Target,
     output reg  Zero
 );   
+
+parameter ADD = 4'b0000;
+parameter SUB = 4'b1000;
+parameter SLT = 4'b0010;
+parameter SLTU = 4'b0011;
+parameter OR = 4'b0110;
+parameter srcB = 4'b1111;  
+
 
 reg [31: 0] Mul_ALUAin;
 reg [31: 0] Mul_ALUBin;
 
+
 wire [31: 0] ALUAin;
 wire [31: 0] ALUBin;
-wire [31: 0] Target;
+
+
 assign Target = PC + imm;
+
+
+
 
 always @(*) begin
     if(ALUASrc)
@@ -27,9 +41,11 @@ always @(*) begin
         Mul_ALUAin <= busA;
 end
 
+
+
 always @(*) begin
     case (ALUBSrc)
-        2'b0:begin
+        2'b00:begin
             Mul_ALUBin <= busB;
         end 
         2'b01:begin
@@ -47,33 +63,37 @@ assign ALUAin = Mul_ALUAin;
 assign ALUBin = Mul_ALUBin;
 
 always @(ALUctr) begin
-    ALUout <= 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+    ALUout <= 32'h0000_0000;
+
     case (ALUctr)
-        4'b0000:begin//求和
+        ADD:begin//求和
             ALUout <= ALUAin + ALUBin;
         end 
         
-        4'b0110:begin //或
+        OR:begin //或
             ALUout <= ALUAin | ALUBin;
 
         end
 
-        4'b0010:begin//slt
+        SLT:begin//slt
             if(ALUAin<ALUBin)
                 ALUout <=  32'h0000_0001;
             else ALUout <= 0;
         end
 
-        4'b0011:begin //sltu
+        SLTU:begin //sltu
             if(ALUAin<ALUBin)
                 ALUout <= 32'h0000_0001;
             else ALUout <= 0;
         end
 
-        4'b1000:begin //sub
+        SUB:begin //sub
             ALUout <= ALUAin - ALUBin;
         end
-       
+
+        srcB:begin
+            ALUout <= ALUBin;
+        end
     endcase
     if(ALUout==0)
             Zero <= 1;
