@@ -29,30 +29,28 @@ wire [6:0] opcode = Instr[6:0];
 wire [2:0] fun3 = Instr[14:12];
 wire [6:0] fun7=Instr[31:25];
 
-//初始化
-initial begin
-    Jump <= opcode[6] & opcode[5] & ~opcode[4] & opcode[3] & opcode[2] & opcode[1] & opcode[0];
-    Rd <= Instr[11:7];
-    Ra <= Instr[19:15];
-    Rb <= Instr[24:20];
-    RegWr = 0;
-    MemWr = 0;
-    Branch  = 2'b00;//不译码
-    ALUASrc <= 0;
-    ALUBSrc <= 0;
-    ALUctr <= 6'b011000; //不alu计算
-    Extop <= 3'b000;
-    
-end
 
 
 always @(*) begin
     if(~Resetn) begin//低有效 
-        Rd<=0;
-        Ra<=0;
-        Rb<=0;
+        Rd <= 0;
+        Ra <= 0;
+        Rb <= 0;
+        Jump <= opcode[6] & opcode[5] & ~opcode[4] & opcode[3] & opcode[2] & opcode[1] & opcode[0];
+        RegWr <= 0;
+        MemWr <= 0;
+        MemtoReg <= 0;
+        Branch  <= 2'b00;
+        ALUASrc <= 0;
+        ALUBSrc <= 0;
+        ALUctr <= 4'b0000; //不alu计算
+        Extop <= 3'b000;
     end 
     else begin
+
+        Rd <= Instr[11:7];
+        Ra <= Instr[19:15];
+        Rb <= Instr[24:20];
         case(opcode)
             //R型指令 add slt sltu
             7'b0110011:begin    
@@ -61,12 +59,15 @@ always @(*) begin
                     3'b000:begin
                         ALUctr <=4'b0000;
                     end 
+
                     3'b010:begin
                         ALUctr <= 4'b0010;
                     end
+
                     3'b011:begin
                         ALUctr <= 4'b0011;
                     end
+
                     default:;
                 endcase
             end

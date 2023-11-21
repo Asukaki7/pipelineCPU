@@ -1,0 +1,244 @@
+# Reading E:/intelFPGA/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do RiscVCPU_top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying E:/intelFPGA/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v 
+# -- Compiling module RiscVCPU_top
+# 
+# Top level modules:
+# 	RiscVCPU_top
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v 
+# -- Compiling module Mul_PC
+# 
+# Top level modules:
+# 	Mul_PC
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/pc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/pc.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v 
+# -- Compiling module pcadder_IF
+# 
+# Top level modules:
+# 	pcadder_IF
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/instmem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/instmem.v 
+# -- Compiling module InstMem
+# 
+# Top level modules:
+# 	InstMem
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v 
+# -- Compiling module IF_ID_register
+# 
+# Top level modules:
+# 	IF_ID_register
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/ie.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:51 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/ie.v 
+# -- Compiling module IE
+# 
+# Top level modules:
+# 	IE
+# End time: 21:37:51 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/id.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/id.v 
+# -- Compiling module ID
+# 
+# Top level modules:
+# 	ID
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v 
+# -- Compiling module ID_EX_register
+# 
+# Top level modules:
+# 	ID_EX_register
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v 
+# -- Compiling module EX_ALU
+# 
+# Top level modules:
+# 	EX_ALU
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v 
+# -- Compiling module EX_M_register
+# 
+# Top level modules:
+# 	EX_M_register
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/memdata.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/memdata.v 
+# -- Compiling module MemData
+# 
+# Top level modules:
+# 	MemData
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v 
+# -- Compiling module M_WB_register
+# 
+# Top level modules:
+# 	M_WB_register
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v 
+# -- Compiling module Mul_MemtoReg
+# 
+# Top level modules:
+# 	Mul_MemtoReg
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU {E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:37:52 on Nov 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/coding/Fpga_project_digital/pipelineCPU" E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v 
+# -- Compiling module RiscVCPU_top_tb
+# 
+# Top level modules:
+# 	RiscVCPU_top_tb
+# End time: 21:37:52 on Nov 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  RiscVCPU_top_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" RiscVCPU_top_tb 
+# Start time: 21:37:52 on Nov 20,2023
+# Loading work.RiscVCPU_top_tb
+# Loading work.RiscVCPU_top
+# Loading work.Mul_PC
+# Loading work.PC
+# Loading work.pcadder_IF
+# Loading work.InstMem
+# Loading work.IF_ID_register
+# Loading work.IE
+# Loading work.ID
+# Loading work.RegisterFile
+# Loading work.ID_EX_register
+# Loading work.EX_ALU
+# Loading work.EX_M_register
+# Loading work.MemData
+# Loading work.M_WB_register
+# Loading work.Mul_MemtoReg
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(117): [PCDPC] - Port size (1) does not match connection size (32) for port 'Target'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_Mul_PC File: E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(138): [PCDPC] - Port size (32) does not match connection size (1) for port 'nextPc'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_pcadder_IF File: E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(210): [PCDPC] - Port size (32) does not match connection size (1) for port 'busA'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_RegisterFile File: E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(210): [PCDPC] - Port size (32) does not match connection size (1) for port 'busB'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v(14).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_RegisterFile File: E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(230): [PCDPC] - Port size (32) does not match connection size (1) for port 'rs1_Data'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(230): [PCDPC] - Port size (32) does not match connection size (1) for port 'rs2_Data'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(230): [PCDPC] - Port size (6) does not match connection size (5) for port 'Rd_Data'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(230): [PCDPC] - Port size (1) does not match connection size (2) for port 'ALUBSrc_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v(20).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(230): [PCDPC] - Port size (6) does not match connection size (5) for port 'Rd_EX'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_ID_EX_register File: E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(279): [PCDPC] - Port size (1) does not match connection size (32) for port 'PC'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_ALU File: E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(300): [PCDPC] - Port size (1) does not match connection size (32) for port 'busB_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(300): [PCDPC] - Port size (1) does not match connection size (5) for port 'Rd_data'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(300): [PCDPC] - Port size (1) does not match connection size (32) for port 'ALUout_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(300): [PCDPC] - Port size (1) does not match connection size (32) for port 'Target_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(300): [PCDPC] - Port size (32) does not match connection size (5) for port 'Rd'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v(31).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_EX_M_register File: E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(352): [PCDPC] - Port size (1) does not match connection size (32) for port 'Do_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_M_WB_register File: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(352): [PCDPC] - Port size (1) does not match connection size (5) for port 'Rd_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_M_WB_register File: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(352): [PCDPC] - Port size (1) does not match connection size (32) for port 'ALUout_i'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_M_WB_register File: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+# ** Warning: (vsim-3015) E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v(352): [PCDPC] - Port size (32) does not match connection size (5) for port 'Rd'. The port definition is at: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v(16).
+#    Time: 0 ps  Iteration: 0  Instance: /RiscVCPU_top_tb/u_RiscVCPU_top/u_M_WB_register File: E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v(65)
+#    Time: 1010 ps  Iteration: 0  Instance: /RiscVCPU_top_tb
+# Break in Module RiscVCPU_top_tb at E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v line 65
+# End time: 00:24:58 on Nov 21,2023, Elapsed time: 2:47:06
+# Errors: 0, Warnings: 19

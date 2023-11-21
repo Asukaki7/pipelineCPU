@@ -18,7 +18,7 @@ parameter SUB = 4'b1000;
 parameter SLT = 4'b0010;
 parameter SLTU = 4'b0011;
 parameter OR = 4'b0110;
-parameter srcB = 4'b1111;  
+parameter srcB = 4'b1111;  //lui
 
 
 reg [31: 0] Mul_ALUAin;
@@ -94,6 +94,9 @@ always @(ALUctr) begin
         srcB:begin
             ALUout <= ALUBin;
         end
+
+        default:;
+        
     endcase
     if(ALUout==0)
             Zero <= 1;

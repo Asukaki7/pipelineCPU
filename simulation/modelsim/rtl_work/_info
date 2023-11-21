@@ -1,0 +1,378 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/coding/Fpga_project_digital/pipelineCPU/simulation/modelsim
+vEX_ALU
+Z1 !s110 1700487472
+!i10b 1
+!s100 YV>naiEb[]NHV3AP>nGJY2
+IZOQCWC9KY;Mjd3d?]G@OZ1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1700476282
+8E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v
+FE:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1700487472.000000
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/ex_alu.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/coding/Fpga_project_digital/pipelineCPU
+Z7 tCvgOpt 0
+n@e@x_@a@l@u
+vEX_M_register
+R1
+!i10b 1
+!s100 ^<cz99D72bCLR2Gb@@5VX2
+Imo5SX<jQbI2k0n<Bl9S9z2
+R2
+R0
+w1700396131
+8E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+FE:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/ex_m_register.v|
+!i113 1
+R5
+R6
+R7
+n@e@x_@m_register
+vID
+R1
+!i10b 1
+!s100 EK=cQP`li5YRYfY2YY_Ig2
+I49cU:^4nU9J:K^Z4OGz8j2
+R2
+R0
+w1700404576
+8E:/coding/Fpga_project_digital/pipelineCPU/id.v
+FE:/coding/Fpga_project_digital/pipelineCPU/id.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/id.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/id.v|
+!i113 1
+R5
+R6
+R7
+n@i@d
+vID_EX_register
+R1
+!i10b 1
+!s100 la8kN>902ab<N@d_@<mWH0
+IDEhokBk<DXz?L_^k]6j;o1
+R2
+R0
+w1700335395
+8E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+FE:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/id_ex_register.v|
+!i113 1
+R5
+R6
+R7
+n@i@d_@e@x_register
+vIE
+Z8 !s110 1700487471
+!i10b 1
+!s100 O9fLo84RF9QR_5Rc;[^?b0
+I7KhR73gBGnB29kFW_mjAl2
+R2
+R0
+w1699513983
+8E:/coding/Fpga_project_digital/pipelineCPU/ie.v
+FE:/coding/Fpga_project_digital/pipelineCPU/ie.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z9 !s108 1700487471.000000
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/ie.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/ie.v|
+!i113 1
+R5
+R6
+R7
+n@i@e
+vIF_ID_register
+R8
+!i10b 1
+!s100 Md]J1z02=BV>C=FKX08c@2
+Il13U:e[?>55lGF>Z8Ph_I0
+R2
+R0
+w1700323184
+8E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v
+FE:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/if_id_register.v|
+!i113 1
+R5
+R6
+R7
+n@i@f_@i@d_register
+vInstMem
+R8
+!i10b 1
+!s100 @2a@_P@4dN=l;[k3KVE:G1
+I8l=ePekZ23K`E_SBH=jTi0
+R2
+R0
+w1700478076
+8E:/coding/Fpga_project_digital/pipelineCPU/instmem.v
+FE:/coding/Fpga_project_digital/pipelineCPU/instmem.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/instmem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/instmem.v|
+!i113 1
+R5
+R6
+R7
+n@inst@mem
+vM_WB_register
+R1
+!i10b 1
+!s100 D@TGY[^f?B7fI^D9WLaCh2
+IS8aJW8zn=NW@QO]b7_8lZ3
+R2
+R0
+w1700122199
+8E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+FE:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/m_wb_register.v|
+!i113 1
+R5
+R6
+R7
+n@m_@w@b_register
+vMemData
+R1
+!i10b 1
+!s100 1NTnneTd6bPQ:4W5TRW?<3
+Iik^XG0DQU^bfcD=`0fJ;Q2
+R2
+R0
+w1700475827
+8E:/coding/Fpga_project_digital/pipelineCPU/memdata.v
+FE:/coding/Fpga_project_digital/pipelineCPU/memdata.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/memdata.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/memdata.v|
+!i113 1
+R5
+R6
+R7
+n@mem@data
+vMul_MemtoReg
+R1
+!i10b 1
+!s100 iW0kaBZ4]1[7kXLnlhY_B2
+IPce5AiLT5Qg7>K7Um>3VE3
+R2
+R0
+w1700122657
+8E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v
+FE:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/mul_memtoreg.v|
+!i113 1
+R5
+R6
+R7
+n@mul_@memto@reg
+vMul_PC
+R8
+!i10b 1
+!s100 ?58DeeM7>GT]M4oflV:nd1
+IhlYM[2Hni0HR78^zlCLbW3
+R2
+R0
+w1700402841
+8E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v
+FE:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/mul_pc.v|
+!i113 1
+R5
+R6
+R7
+n@mul_@p@c
+vPC
+R8
+!i10b 1
+!s100 FRC`z?:UPVgW_k`DPOLY40
+Ing8G3Y<_U[?He:k0FNUE33
+R2
+R0
+w1700318756
+8E:/coding/Fpga_project_digital/pipelineCPU/pc.v
+FE:/coding/Fpga_project_digital/pipelineCPU/pc.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/pc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/pc.v|
+!i113 1
+R5
+R6
+R7
+n@p@c
+vpcadder_IF
+R8
+!i10b 1
+!s100 b;Sh8>1A@Vk@UQ_J:W9o:3
+I1FIhZkm[>dYm<7ZA1HoQb3
+R2
+R0
+w1700158295
+8E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v
+FE:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/pcadder_if.v|
+!i113 1
+R5
+R6
+R7
+npcadder_@i@f
+vRegisterFile
+R1
+!i10b 1
+!s100 R8?Z;KAO3GoBE2KHkekcR1
+Imm_:I]aa:Ua>Hho5l2S_33
+R2
+R0
+w1700122316
+8E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v
+FE:/coding/Fpga_project_digital/pipelineCPU/registerfile.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/registerfile.v|
+!i113 1
+R5
+R6
+R7
+n@register@file
+vRiscVCPU_top
+R8
+!i10b 1
+!s100 U7O69l;@W3]0VLzQ9foiN0
+IS^<VEcmiOCI<8ne>N3CzS0
+R2
+R0
+w1700484683
+8E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v
+FE:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/riscvcpu_top.v|
+!i113 1
+R5
+R6
+R7
+n@risc@v@c@p@u_top
+vRiscVCPU_top_tb
+R1
+!i10b 1
+!s100 c0`Wgh5<2h8Z;KHPeljOA2
+IZ^Rc`b2H_[70[ETlP5A8f0
+R2
+R0
+w1700487458
+8E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v
+FE:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/coding/Fpga_project_digital/pipelineCPU|E:/coding/Fpga_project_digital/pipelineCPU/RiscVCPU_top_tb.v|
+!i113 1
+R5
+R6
+R7
+n@risc@v@c@p@u_top_tb

@@ -1,6 +1,6 @@
 module Mul_PC(
-    input Target,
-    input nextpc,
+    input [31:0] Target,
+    input [31:0] nextPc,
     input Zero,
     input Branch,
     input Jump,
@@ -10,7 +10,7 @@ module Mul_PC(
 );
 
 
-assign PC_i = (Jump || (Branch && Zero)) ? Target : nextpc;
+assign PC_i = (Jump || (Branch && Zero)) ? Target : nextPc;
 
 
 

@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at id.v(50): always construct contains both blocking and non-blocking assignments File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 50
+Warning (10268): Verilog HDL information at id.v(35): always construct contains both blocking and non-blocking assignments File: E:/coding/Fpga_project_digital/pipelineCPU/id.v Line: 35
