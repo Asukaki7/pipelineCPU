@@ -56,7 +56,7 @@ end
 
 
 //同步写
-always @(negedge CLK ) begin
+always @(negedge CLK or negedge Resetn) begin
     if(RegWr == 1'b1) begin
         if(Rw == 1'b0)begin
             

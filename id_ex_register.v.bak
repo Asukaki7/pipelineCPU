@@ -43,12 +43,12 @@
 );
 
 
-always @(negedge CLK or negedge Resetn) begin
+always @(negedge CLK ) begin
     if(!Resetn) begin
         busA_EX <= 32'b0;
         busB_EX <= 32'b0;
         PC_EX <= 32'b0;
-        Rd_EX <= 5'b0;
+        Rd_EX <= 6'b0;
         MemWr_EX <= 1'b0;
         Branch_EX <= 1'b0;
         Jump_EX <= 1'b0;
@@ -58,7 +58,6 @@ always @(negedge CLK or negedge Resetn) begin
         ALUBSrc_EX <= 2'b0;
         ALUctr_EX <= 4'b0;
         Ra_EX <= 5'b0;
-        imm_EX <= 32'b0;
         Rb_EX <= 5'b0;
         MemRead_EX <= 0;
     end
@@ -77,7 +76,6 @@ always @(negedge CLK or negedge Resetn) begin
         ALUctr_EX <= ALUctr_ID;
         Ra_EX <= Ra_ID;
         Rb_EX <= Rb_ID;
-        imm_EX <= imm;
         MemRead_EX <= MemRead_ID;
     end
 end

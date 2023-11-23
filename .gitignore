@@ -1,1 +1,11 @@
 /db
+/simulation
+/incremental_db
+/output_files
+.bak
+.qsf
+.qsf
+.qws
+/.qsys_edit
+
+

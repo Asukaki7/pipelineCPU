@@ -10,7 +10,7 @@ module Mul_MemDi (
 );
 
 
-assign Di_M_out = DiSrc ? Di:busB_M;
+assign Di_M_out = DiSrc ? Di : busB_M;
 
     
-endmodule
+endmodule 

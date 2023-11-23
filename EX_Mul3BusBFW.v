@@ -1,6 +1,6 @@
-module EX_Mul3BusBFW (
+module EX_Mul3BusBFw (
     //control port
-    input [1:0] BusBFW,
+    input [1:0] BusBFw,
 
     //input data
     input [31:0] busB_EX,
@@ -8,25 +8,25 @@ module EX_Mul3BusBFW (
     input [31:0] ALUout_M,
     
 
-    output reg [31:0] BusBFW_out
+    output reg [31:0] BusBFw_out
 );
 
 always @(*) begin
-    case (BusBFW)
+    case (BusBFw)
         2'b00: begin
-            BusBFW_out <= busB_EX;
+            BusBFw_out <= busB_EX;
         end 
 
         2'b01:begin
-            BusBFW_out <= Di;
+            BusBFw_out <= Di;
         end
 
         2'b10:begin
-            BusBFW_out <= ALUout_M;
+            BusBFw_out <= ALUout_M;
         end
         
         default:begin
-            BusBFW_out <= 32'h0000_0000;
+            BusBFw_out <= 32'h0000_0000;
         end 
     endcase
 end

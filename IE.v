@@ -5,31 +5,36 @@ module IE(
     output reg [31:0] imm
     );
     
-always @(*) begin
+
+initial begin
     imm<=32'b0000_0000_0000_0000_0000_0000_0000_0000;
+end
+
+
+always @(*) begin
+    
     case (Extop)
         3'b000:begin//I型指令 ori  lw immI
-            imm<={{20{Instr[31]}},Instr[31:20]};
+            imm <= {{20{Instr[31]}},Instr[31:20]};
         end 
 
         3'b001:begin//U型指令 lui immU
-            imm<={Instr[31:12],12'b0};
+            imm <= {Instr[31:12],12'b0};
         end
         
         3'b010:begin //S型指令 sw immS
-            imm<={{20{Instr[31]}},Instr[31:25],Instr[11:7]};
+            imm <= {{20{Instr[31]}},Instr[31:25],Instr[11:7]};
         end
 
         3'b011:begin //B 型指令 beq 
-            imm<={{20{Instr[31]}},Instr[7],Instr[30:25],Instr[11:8],1'b0};
+            imm <= {{20{Instr[31]}},Instr[7],Instr[30:25],Instr[11:8],1'b0};
         end
         
         3'b100:begin//J型指令 jal immJ sext(20)
-            imm<={{12{Instr[31]}},Instr[19:12],Instr[20],Instr[30:21],1'b0};    
+            imm <= {{12{Instr[31]}},Instr[19:12],Instr[20],Instr[30:21],1'b0};    
         end
         
-        default:begin
-        end
+        default:;
 
     endcase
 end

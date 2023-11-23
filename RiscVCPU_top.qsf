@@ -60,5 +60,13 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RiscVCPU_top_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME RiscVCPU_top_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RiscVCPU_top_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RiscVCPU_top_tb -section_id RiscVCPU_top_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME IF_PC_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id IF_PC_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME IF_PC_tb -section_id IF_PC_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME EX_ALU_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id EX_ALU_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME EX_ALU_tb -section_id EX_ALU_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE RiscVCPU_top_tb.v -section_id RiscVCPU_top_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/IF_PC_tb.v -section_id IF_PC_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/EX_ALU_tb.v -section_id EX_ALU_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

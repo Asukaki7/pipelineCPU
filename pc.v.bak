@@ -12,9 +12,9 @@ assign PC = PC0;
 
 initial begin    
         PC0 <= 32'd0;   
-    end  
+end  
 
-always @(negedge CLK  ) begin
+always @(negedge CLK) begin
     if(~Resetn) begin
         PC0 <= 32'd0;
     end

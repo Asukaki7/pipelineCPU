@@ -1,6 +1,6 @@
 module EX_ALU(
 
-    input PC,
+    input [31:0] PC,
     input wire [3:0] ALUctr,
     input wire ALUASrc,
     input wire [1:0] ALUBSrc,
@@ -9,7 +9,7 @@ module EX_ALU(
     input wire [31:0] imm,
 
     output reg [31:0] ALUout,
-    output wire [31:0] Target,
+    output reg [31:0] Target,
     output reg  Zero
 );   
 
@@ -29,10 +29,13 @@ wire [31: 0] ALUAin;
 wire [31: 0] ALUBin;
 
 
-assign Target = PC + imm;
 
 
 
+initial begin
+    ALUout <= 32'h0000_0000;
+    Target <= 32'h0000_0000;
+end
 
 always @(*) begin
     if(ALUASrc)
@@ -62,9 +65,9 @@ end
 assign ALUAin = Mul_ALUAin;
 assign ALUBin = Mul_ALUBin;
 
-always @(ALUctr) begin
-    ALUout <= 32'h0000_0000;
-
+always @(*) begin
+    
+    Target <= imm +PC;
     case (ALUctr)
         ADD:begin//求和
             ALUout <= ALUAin + ALUBin;
@@ -91,7 +94,7 @@ always @(ALUctr) begin
             ALUout <= ALUAin - ALUBin;
         end
 
-        srcB:begin
+        srcB:begin //lui
             ALUout <= ALUBin;
         end
 

@@ -33,7 +33,7 @@ module EX_M_register (
 );
 
 
-always @(negedge CLK ) begin
+always @(negedge CLK or negedge Resetn ) begin
     if(!Resetn) begin
         MemWr_M <= 1'b0;
         Branch_M <= 1'b0;

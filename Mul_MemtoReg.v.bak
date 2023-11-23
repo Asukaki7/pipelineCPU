@@ -12,4 +12,4 @@ module Mul_MemtoReg (
 assign Di = MemtoReg? Do : ALUout;
 
 
-endmodule 
+endmodule

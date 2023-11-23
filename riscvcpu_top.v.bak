@@ -2,13 +2,11 @@ module RiscVCPU_top(
     input CLK,
     input Resetn, //
 
-    output wire out_En,
+
     output wire [31:0] out_Instr,
     output wire [31:0] out_PC,
     //ID
-    output wire [2:0] out_Extop,
-    output wire [4:0] out_Ra,
-    output wire [4:0] out_Rb,
+    output wire [31:0] out_Extop,
     //EX
     output wire out_ALUASrc,
     output wire [1:0] out_ALUBSrc,
@@ -28,16 +26,14 @@ module RiscVCPU_top(
     output wire out_Zero,
     output wire [31:0] out_Target,
     //m_do
-    output wire [31:0] out_Di,
-    output wire [31:0] out_imm,
-    output wire [31:0] out_PC_EX
+    output wire [31:0] out_Di
 );
 
 
 
 //***************************************//
 //IF unit
-wire [31:0] Target, PC_i, PC, nextPc;
+wire [31:0] Target, nextpc, PC_i, PC;
 wire Zero, Branch, Jump;
 wire [31:0] Instr;
 //***************************************//
@@ -47,7 +43,6 @@ wire [31:0] Instr;
 //IF_ID pipelineRegisters
 wire [31:0] PC_ID;
 wire [31:0] Instr_ID;
-wire [4:0] ID_Ra_out, ID_Rb_out;
 //***************************************//
 
 
@@ -55,18 +50,13 @@ wire [4:0] ID_Ra_out, ID_Rb_out;
 //ID Unit
 wire [2:0]  Extop;
 wire [31:0] imm;
-wire [4:0] Rd;
-wire [31:0] busA, busB;
-wire ALUASrc, ALUASrc_ID;
-wire [1:0] ALUBSrc, ALUBSrc_ID;
-wire [3:0] ALUctr, ALUctr_ID;
-wire MemWr, RegWr, MemtoReg, MemWr_ID, RegWr_ID, MemtoReg_ID;
+wire [4:0] Rd, Ra, Rb;
+wire ALUASrc;
+wire [1:0] ALUBSrc;
+wire [3:0] ALUctr;
+wire MemWr, RegWr, MemtoReg;
 wire [31:0] Di;
 wire [31:0] Rw;
-wire MemRead, CLoad_Use;
-wire Branch_ID, Jump_ID;
-
-
 //***************************************//
 
 
@@ -80,8 +70,6 @@ wire MemWr_EX, Branch_EX, Jump_EX, MemtoReg_EX, RegWr_EX;
 wire ALUASrc_EX;
 wire [1:0] ALUBSrc_EX;
 wire [3:0] ALUctr_EX;
-wire  MemRead_EX;
-wire [4:0] Ra_EX,Rb_EX;
 //***************************************//
 
 
@@ -89,7 +77,6 @@ wire [4:0] Ra_EX,Rb_EX;
 //***************************************//
 //EX Unit
 wire [31:0] ALUout;
-wire [31:0] BusAFw_out, BusBFw_out;
 //***************************************//
 
 
@@ -97,8 +84,7 @@ wire [31:0] BusAFw_out, BusBFw_out;
  //EX_MEM pipelineRegisters
 
 wire [31:0] busB_M, Target_M, ALUout_M ;
-wire [4:0] Rd_M, Rb_M;
-
+wire [4:0] Rd_M;
 wire MemWr_M, Branch_M, Jump_M, MemtoReg_M, RegWr_M, Zero_M;
 
 //***************************************//
@@ -107,8 +93,6 @@ wire MemWr_M, Branch_M, Jump_M, MemtoReg_M, RegWr_M, Zero_M;
 //***************************************//
 //Mem unit
 wire [31:0] Do;
-wire [1:0] BusAFw,BusBFw;
-wire DiSrc;
 //***************************************//
 
 
@@ -120,6 +104,8 @@ wire MemtoReg_WB, RegWr_WB;
 wire [4:0] Rd_WB;
 wire [31:0] Do_WB, ALUout_WB;
 //***************************************//
+
+
 
 
 
@@ -142,12 +128,10 @@ Mul_PC u_Mul_PC(
     .PC_i   (PC_i   )
 );
 
-
 PC u_PC(
     .CLK    (CLK    ),
     .PC_i   (PC_i   ),
     .Resetn (Resetn ),
-    .En     (CLoad_Use ),
     .PC     (PC     )
 );
 
@@ -168,25 +152,19 @@ InstMem u_InstMem(
 
 
 
-
 //***************************************//
 //IF_ID pipelineRegisters
 
-
-
-
 IF_ID_register u_IF_ID_register(
     //input port
-    .CLK       (CLK       ),
-    .PC_i      (PC_i      ),
-    .Instr_i   (Instr   ),
-    .Resetn    (Resetn    ),
-    .En        (CLoad_Use ),
+    .CLK     (CLK     ),
+    .PC_i    (PC      ),
+    .Instr_i (Instr   ),
+    .Resetn  (Resetn  ),
+
     //output port
-    .PC        (PC_ID        ),
-    .Instr     (Instr_ID     ),
-    .ID_Ra_out (ID_Ra_out ), //load-use
-    .ID_Rb_out (ID_Rb_out )  //load-use
+    .PC      (PC_ID   ),
+    .Instr   (Instr_ID)
 );
 
 //***************************************//
@@ -196,18 +174,6 @@ IF_ID_register u_IF_ID_register(
 
 //***************************************//
 //ID Unit
-
-
-Load_UseUnit u_Load_UseUnit(
-
-    .ID_Ra_out  (ID_Ra_out),
-    .ID_Rb_out  (ID_Rb_out),
-    .Rd_EX      (Rd_EX),
-    .MemRead_EX (MemRead_EX),
-    .CLoad_Use  (CLoad_Use)
-
-);
-
 IE u_IE(
     .Instr (Instr_ID ),
 
@@ -224,6 +190,8 @@ ID u_ID(
 
     //ouput port
     .Rd       (Rd       ),
+    .Ra       (Ra       ),
+    .Rb       (Rb       ),
 
     .Extop    (Extop    ),
 
@@ -236,8 +204,7 @@ ID u_ID(
     .Jump     (Jump     ),
 
     .MemtoReg (MemtoReg ),
-    .RegWr    (RegWr    ),
-    .MemRead  (MemRead  )
+    .RegWr    (RegWr    )
 );
 
 RegisterFile u_RegisterFile(
@@ -246,50 +213,21 @@ RegisterFile u_RegisterFile(
     .Resetn (Resetn ),
     .Rw     (Rd_WB     ), //写入地址
     .Di     (Di     ), //写入数据
-    .Ra     (ID_Ra_out     ), //读取地址1
+    .Ra     (Ra     ), //读取地址1
     .busA   (busA   ), //读取数据1
-    .Rb     (ID_Rb_out     ), //读取地址2
+    .Rb     (Rb     ), //读取地址2
     .busB   (busB   )  //读取数据2
 );
 
-
-
 //***************************************//
 
 
 
 
 
-
+wire [5:0] Ra_EX,Rb_EX;
 //***************************************//
  //ID_EX pipelineRegisters
-
-
-Mul_ctr_loadUse u_Mul_ctr_loadUse(
-    .MemWr       (MemWr       ),
-    .Branch      (Branch      ),
-    .Jump        (Jump        ),
-    .MemtoReg    (MemtoReg    ),
-    .RegWr       (RegWr       ),
-    .ALUASrc     (ALUASrc     ),
-    .ALUBSrc     (ALUBSrc     ),
-    .ALUctr      (ALUctr      ),
-    .MemRead     (MemRead     ),
-
-    .CLoad_Use   (CLoad_Use   ),
-
-    .MemWr_ID    (MemWr_ID    ),
-    .Branch_ID   (Branch_ID   ),
-    .Jump_ID     (Jump_ID     ),
-    .MemtoReg_ID (MemtoReg_ID ),
-    .RegWr_ID    (RegWr_ID    ),
-    .ALUASrc_ID  (ALUASrc_ID  ),
-    .ALUBSrc_ID  (ALUBSrc_ID  ),
-    .ALUctr_ID   (ALUctr_ID   )
-);
-
-
-
 ID_EX_register u_ID_EX_register(
 
      //input port
@@ -300,17 +238,16 @@ ID_EX_register u_ID_EX_register(
     .rs1_Data    (busA    ),
     .rs2_Data    (busB    ),
     .Rd_Data     (Rd     ),
-    .Ra_ID       (ID_Ra_out       ),
-    .Rb_ID       (ID_Rb_out       ),
-    .MemWr_ID    (MemWr_ID    ),
-    .Branch_ID   (Branch_ID   ),
-    .Jump_ID     (Jump_ID     ),
-    .MemtoReg_ID (MemtoReg_ID ),
-    .RegWr_ID    (RegWr_ID    ),
-    .ALUASrc_ID  (ALUASrc_ID  ),
-    .ALUBSrc_ID  (ALUBSrc_ID  ),
-    .ALUctr_ID   (ALUctr_ID   ),
-    .MemRead_ID   (MemRead  ),
+    .Ra_ID       (Ra       ),
+    .Rb_ID       (Rb       ),
+    .MemWr_ID     (MemWr     ),
+    .Branch_ID    (Branch    ),
+    .Jump_ID      (Jump      ),
+    .MemtoReg_ID  (MemtoReg  ),
+    .RegWr_ID     (RegWr     ),
+    .ALUASrc_ID   (ALUASrc   ),
+    .ALUBSrc_ID   (ALUBSrc   ),
+    .ALUctr_ID    (ALUctr    ),
 
     //output port
     .Ra_EX       (Ra_EX       ),
@@ -327,8 +264,7 @@ ID_EX_register u_ID_EX_register(
     .RegWr_EX    (RegWr_EX    ),
     .ALUASrc_EX  (ALUASrc_EX  ),
     .ALUBSrc_EX  (ALUBSrc_EX  ),
-    .ALUctr_EX   (ALUctr_EX   ),
-    .MemRead_EX  (MemRead_EX  )
+    .ALUctr_EX   (ALUctr_EX   )
 );
 
 //***************************************//
@@ -344,33 +280,27 @@ parameter SLT = 4'b0010;
 parameter SLTU = 4'b0011;
 parameter OR = 4'b0110;
 parameter srcB = 4'b1111;   */
+wire [31:0] BusAFW_out, BusBFW_out;
 
-
-
-
-EX_Mul3BusAFw u_EX_Mul3BusAFw(
-    //input port
-    .BusAFw     (BusAFw     ),
+EX_Mul3BusAFW u_EX_Mul3BusAFW(
     .busA_EX    (busA_EX    ),
     .Di         (Di         ),
     .ALUout_M   (ALUout_M   ),
-
-    //output port 
-    .BusAFw_out (BusAFw_out )
+    
+    .BusAFW     (BusAFW     ),
+    
+    .BusAFW_out (BusAFW_out )
 );
 
 
-
-EX_Mul3BusBFw u_EX_Mul3BusBFw(
-
-    //input port
-    .BusBFw     (BusBFw     ),
+EX_Mul3BusBFW u_EX_Mul3BusBFW(
     .busB_EX    (busB_EX    ),
     .Di         (Di         ),
     .ALUout_M   (ALUout_M   ),
-
-     //output port 
-    .BusBFw_out (BusBFw_out )
+    
+    .BusBFW     (BusBFW     ),
+    
+    .BusBFW_out (BusBFW_out )
 );
 
 
@@ -383,8 +313,8 @@ EX_ALU u_EX_ALU(
     .ALUctr  (ALUctr_EX  ),
     .ALUASrc (ALUASrc_EX ),
     .ALUBSrc (ALUBSrc_EX ),
-    .busA    (BusAFw_out    ),
-    .busB    (BusBFw_out    ),
+    .busA    (BusAFW_out    ),
+    .busB    (BusBFW_out    ),
     .imm     (imm_EX     ),
 
     //output port
@@ -396,6 +326,36 @@ EX_ALU u_EX_ALU(
 
 
 
+
+EX_M_register u_EX_M_register(
+    //input port
+    .CLK        (CLK        ),
+    .Resetn     (Resetn     ),
+    .busB_i     (busB_EX     ),
+    .Rd_data    (Rd_EX    ),
+    .ALUout_i   (ALUout   ),
+    .zero_i     (Zero     ),
+    .Target_i   (Target   ),
+
+    .MemtoReg_i (MemtoReg_EX ),
+    .Regwr_i    (RegWr_EX    ),
+    .Jump_i     (Jump_EX     ),
+    .Branch_i   (Branch_EX   ),
+    .MemWr_i    (MemWr_EX    ),
+
+
+    //output port
+    .MemWr      (MemWr_M      ),
+    .Branch     (Branch_M     ),
+    .Jump       (Jump_M       ),
+    .MemtoReg   (MemtoReg_M   ),
+    .Regwr      (RegWr_M      ),
+    .Zero       (Zero_M       ),
+    .busB       (busB_M       ),
+    .Target     (Target_M     ),
+    .Rd         (Rd_M         ),
+    .ALUout     (ALUout_M     )
+);
 
 
 //***************************************//
@@ -433,7 +393,7 @@ EX_M_register u_EX_M_register(
 
 
 
-wire [31:0] Di_M_out;
+
 
 //***************************************//
 //Mem unit
@@ -457,7 +417,7 @@ MemData u_MemData(
 
     .Do     (Do     )
 );
-
+wire [1:0] BusAFw,BusBFw;
 ForwardUnit u_ForwardUnit(
     //input port
     .RegWr_M  (RegWr_M  ), 
@@ -516,24 +476,20 @@ Mul_MemtoReg u_Mul_MemtoReg(
 );
 //***************************************//
 
-assign out_En = CLoad_Use;
+
  //output!
 assign out_Instr = Instr;
 assign out_PC = PC_ID;
-assign out_PC_EX = PC_EX;
 //control signal
 //ID
 assign out_Extop = Extop;
-assign out_Ra = ID_Ra_out;
-assign out_Rb = ID_Rb_out;
 //EX
-assign out_ALUASrc = ALUASrc_EX;
-assign out_ALUBSrc = ALUBSrc_EX;
-assign out_ALUctr  = ALUctr_EX;
+assign out_ALUASrc = ALUASrc;
+assign out_ALUBSrc = ALUBSrc;
+assign out_ALUctr  = ALUctr;
 assign out_ALUout  = ALUout;
 assign out_Zero    = Zero;
 assign out_Target  = Target;
-assign out_imm = imm_EX;
 //M
 assign out_MemWr = MemWr;
 assign out_Branch = Branch;
@@ -544,9 +500,9 @@ assign out_RegWr = RegWr;
 assign out_Di      = Di;
 
 //id_rs1,rs2
-assign out_busA_ex = BusAFw_out;
-assign out_busB_ex = BusBFw_out;
-assign out_Rd_ex   = Rd;
+assign out_busA_ex = busA_EX;
+assign out_busB_ex = busB_EX;
+assign out_Rd_ex   = Rd_EX;
 //m_do
 
 
@@ -554,5 +510,4 @@ assign out_Rd_ex   = Rd;
 
 
 
-
-endmodule 
+endmodule
