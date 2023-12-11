@@ -1,3 +1,4 @@
+//运算部件
 module EX_ALU(
 
     input [31:0] PC,
@@ -66,7 +67,6 @@ assign ALUAin = Mul_ALUAin;
 assign ALUBin = Mul_ALUBin;
 
 always @(*) begin
-    
     Target <= imm +PC;
     case (ALUctr)
         ADD:begin//求和
@@ -75,7 +75,6 @@ always @(*) begin
         
         OR:begin //或
             ALUout <= ALUAin | ALUBin;
-
         end
 
         SLT:begin//slt

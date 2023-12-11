@@ -1,3 +1,4 @@
+//三路选择器，选择进入ALUB口的数据
 module EX_Mul3BusBFw (
     //control port
     input [1:0] BusBFw,

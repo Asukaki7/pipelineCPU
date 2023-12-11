@@ -20,7 +20,7 @@ initial begin
         instMem_text[9]<=32'b00000000000100011110010010010011;  //0011e493 ori imm 1 ^ rs 3 to rs 9  = 2
         instMem_text[10]<=32'b00000000000000000001010100110111; //00001537 lui imm 1 << 12 to rs 10  = 1 << 12
         instMem_text[11]<=32'b11111100000100111000100011100011; //fc1388e3 beq rs 1 == rs 7 ? jump to 0
-        instMem_text[12]<=32'b00000010000000000000000011101111; //020000ef jal + 8;
+        instMem_text[12]<=32'b00000010000000000000000011101111; //020000ef jal + 8'4;
         instMem_text[13]<=32'h0000_0000;
         instMem_text[14]<=32'h0000_0000;
         instMem_text[15]<=32'h0000_1111;
@@ -30,8 +30,6 @@ initial begin
         instMem_text[19]<=32'h0000_0000;
         instMem_text[20]<=32'h0000_0000;
         instMem_text[21]<=32'h0000_0000;
-        
-        
 
 end  
    

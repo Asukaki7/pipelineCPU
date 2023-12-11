@@ -166,13 +166,8 @@ InstMem u_InstMem(
 
 
 
-
-
-
 //***************************************//
 //IF_ID pipelineRegisters
-
-
 
 
 IF_ID_register u_IF_ID_register(

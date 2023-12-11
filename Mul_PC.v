@@ -6,12 +6,8 @@ module Mul_PC(
     input Jump,
 
     output wire [31:0] PC_i
-
 );
 
-
 assign PC_i = (Jump || (Branch && Zero)) ? Target : nextPc;
-
-
 
 endmodule

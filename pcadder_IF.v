@@ -1,3 +1,4 @@
+//正常计算下一个指令的地址（可以优化）
 module pcadder_IF(
     input [31:0] nowPc,
 

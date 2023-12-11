@@ -1,3 +1,4 @@
+//根据load-use控制信号 判断是否需要阻塞数据
 module Mul_ctr_loadUse (
     input MemWr,
     input Branch,

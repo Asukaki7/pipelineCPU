@@ -1,3 +1,9 @@
+/* 
+转发检测单元，可以解决：
+①	相邻两条ALU运算类指令间的数据相关
+②	相隔一条ALU运算类指令间的数据相关
+③	相隔一条指令的Load和ALU运算指令之间的数据相关
+*/
 module ForwardUnit(
     input RegWr_M,
     input MemWr_M,
